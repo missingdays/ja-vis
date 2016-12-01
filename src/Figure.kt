@@ -1,6 +1,10 @@
+
+package ja.vis
+
 import java.awt.Color
 import java.awt.Graphics
 
+import org.json.*
 /**
  * Created by missingdays on 01.12.16.
  */
@@ -11,11 +15,14 @@ abstract class Figure {
 
     var coordinate : Coordinate = Coordinate(0, 0)
 
-    val g : Graphics
+    abstract fun draw(g : Graphics)
+}
 
-    constructor(g: Graphics){
-        this.g = g
+fun getFigureFromJSONObject(jo : JSONObject) : Figure{
+    when(jo.getString("type")){
+        "circle" -> return getCircleFromJSONObject(jo)
+        "rectangle" -> return getRectangleFromJSONObject(jo)
     }
 
-    abstract fun draw()
+    throw Exception("Unknown figure type " + jo.getString("type"))
 }

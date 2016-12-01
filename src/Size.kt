@@ -1,3 +1,7 @@
+
+
+package ja.vis
+
 /**
  * Created by missingdays on 01.12.16.
  */
