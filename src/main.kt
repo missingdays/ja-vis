@@ -7,6 +7,8 @@ package ja.vis
 import java.awt.*
 import java.awt.event.*
 
+import ja.vis.DefaultWindowAdapter
+
 fun main(args: Array<String>){
     Example()
 }
@@ -22,22 +24,10 @@ class Example : Frame {
 
     override fun paint(g : Graphics){
         g.color = Color.red
-        g.drawRect(50, 50, 200, 200)
+        g.fillRect(50, 50, 200, 200)
 
         g.color = Color.blue
-        g.drawRect(75, 75, 300, 200)
+        g.drawRect(50, 50, 200, 200)
     }
 }
 
-class DefaultWindowAdapter : WindowAdapter {
-    var frame : Frame? = null
-    constructor(frame : Frame): super(){
-        this.frame = frame
-    }
-
-    override fun windowClosing(e : WindowEvent){
-        frame?.dispose()
-
-        System.exit(0)
-    }
-}
