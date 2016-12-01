@@ -2,8 +2,6 @@
  * Created by missingdays on 01.12.16.
  */
 
-package ja.vis
-
 import java.awt.*
 import java.awt.event.*
 
