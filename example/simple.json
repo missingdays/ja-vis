@@ -1,0 +1,56 @@
+{
+    "data": [
+    {
+        "tick": 0,
+        "figure": {
+            "type": "circle",
+            "radius": 100,
+            "x": 100,
+            "y": 100,
+            "fillColor": 254,
+            "borderColor": 0
+        }
+    },
+    {
+        "tick": 1,
+        "figure": {
+            "type": "circle",
+            "radius": 90,
+            "x": 100,
+            "y": 100,
+            "fillColor": 254,
+            "borderColor": 0
+        }
+    },{
+        "tick": 2,
+        "figure": {
+            "type": "circle",
+            "radius": 80,
+            "x": 100,
+            "y": 100,
+            "fillColor": 254,
+            "borderColor": 0
+        }
+    },{
+        "tick": 3,
+        "figure": {
+            "type": "circle",
+            "radius": 70,
+            "x": 100,
+            "y": 100,
+            "fillColor": 254,
+            "borderColor": 0
+        }
+    },{
+        "tick": 4,
+        "figure": {
+            "type": "circle",
+            "radius": 60,
+            "x": 100,
+            "y": 100,
+            "fillColor": 254,
+            "borderColor": 0
+        }
+    }
+    ]
+}

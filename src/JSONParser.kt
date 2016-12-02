@@ -18,6 +18,8 @@ class JSONParser {
         this.fileName = fileName
 
         this.eventFile = parseFile()
+
+        sortEvents()
     }
 
     private fun parseFile() : EventFile{
@@ -39,5 +41,17 @@ class JSONParser {
         }
 
         return eventFile
+    }
+
+    private fun sortEvents(){
+        Collections.sort(eventFile.events, {a, b ->
+            if(a.tick < b.tick){
+                -1
+            } else if(a.tick > b.tick){
+                1
+            } else {
+                0
+            }
+        })
     }
 }
