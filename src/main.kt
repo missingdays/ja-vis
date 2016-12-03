@@ -36,6 +36,8 @@ class MainFrame : Frame {
     var currentTick : Long = 0
     var currentEvents : List<Event> = ArrayList()
 
+    private var currentEventIndex = 0
+
     constructor(fileName : String) : super("JA visualizer"){
         setSize(800, 600)
 
@@ -59,9 +61,18 @@ class MainFrame : Frame {
     }
 
     fun generateCurrentEvents() : List<Event>{
-        return j.eventFile.events.filter {
-            it.tick == currentTick
+        val list = mutableListOf<Event>()
+
+        while(currentEventIndex < j.eventFile.events.size){
+
+            if(j.eventFile.events[currentEventIndex].tick != currentTick){
+                break
+            }
+
+            list.add(j.eventFile.events[currentEventIndex])
+            currentEventIndex++
         }
+        return list
     }
 
     fun nextTick(){
@@ -69,9 +80,10 @@ class MainFrame : Frame {
             return
         }
 
-        currentTick++
         currentEvents = generateCurrentEvents()
-
         repaint()
+
+        currentTick++
+
     }
 }
